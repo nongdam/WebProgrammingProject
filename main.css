@@ -1,0 +1,128 @@
+/*전체적인 스타일*/
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.wrap {
+    background-color: white;
+    width: 100%;
+    min-width: 500px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li > a:hover {
+    text-decoration: underline;
+}
+
+/*태그 스타일 (색깔은 영역 구분 알 수 있게 임시조치 한 것)*/
+
+header {
+    float: left;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    background-color: green;
+}
+
+nav {
+    float: left;
+    width: 100%;
+    height: 10%;
+    background-color: pink;
+}
+
+section {
+    float: left;
+    width: 100%;
+    height: 70%;
+    background-color: skyblue;
+}
+
+article {}
+
+footer {
+    float: left;
+    width: 100%;
+    height: 10%;
+    background-color: plum;
+}
+
+/*세부태그, 클래스 스타일*/
+
+/*타이틀*/
+h1.title {
+    display: inline;
+    color: greenyellow;
+}
+
+.title_logo {
+    padding-right: 16px;
+    height: 100%
+}
+
+/*navigation 메뉴바*/
+ul.nav_bar {
+    float: left;
+    background: greenyellow;
+    padding: 8px 0px 8px 0px
+}
+
+ul.nav_bar > li {
+    list-style-type: none;
+    float: left;
+    padding-left: 32px;
+}
+
+ul.nav_bar > li:first-child {
+    padding-left:8px;
+}
+
+ul.nav_bar > li:last-child {
+    padding-right:8px;
+}
+
+/*센션에 들어가는 내용*/
+div.container {
+    width: 100%;
+}
+
+/* 검색 */
+nav > .container:first-child {
+    overflow: hidden;
+    float: left;
+    width: 60%;
+}
+nav > .container:nth-child(2) {
+    overflow: hidden;
+    float: right;
+    width: 40%;
+}
+nav .search {
+    float: right;
+    margin: 0 auto;
+    margin-left: 20px;
+	flex-direction: row;
+	flex-basis: 45px;
+    border: 5px solid #1f3f5f;
+	background-color: #fff;
+}
+.search input {
+	flex-grow: 1;
+	height: 45px;
+	padding: 0 20px;
+	line-height: 45px;
+	border: 0;
+	box-sizing: border-box;
+	background: none;
+	min-width: 250px;
+}
