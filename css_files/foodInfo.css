@@ -57,7 +57,7 @@ nav {
     float: left;
     width: 100%;
     height: 10%;
-    background-color: #556b2f;
+    background-color: black;
 }
 
 section {
@@ -75,7 +75,7 @@ footer {
     float: left;
     width: 100%;
     height: 15%;
-    background-color: #87CEEB;
+    background-color: plum;
 }
 
 /*타이틀*/
@@ -87,72 +87,6 @@ h1.title {
 .title_logo {
     padding-right: 4px;
     height: 32px;
-}
-
-/*세부태그, 클래스 스타일*/
-.subtitle {
-    text-align: center;
-}
-
-/*navigation 메뉴바*/
-ul.nav_bar {
-    float: left;
-    background-color: #556b2f;
-    padding: 8px 0px 8px 0px
-}
-
-ul.nav_bar > li {
-    list-style-type: none;
-    float: left;
-    padding-left: 32px;
-}
-
-ul.nav_bar > li:first-child {
-    padding-left:8px;
-}
-
-ul.nav_bar > li:last-child {
-    padding-right:8px;
-}
-
-/*섹션에 들어가는 내용*/
-div.container {
-    width: 100%;
-}
-
-.colortest {
-    display: block;
-}
-
-.colortest > div {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-/*요리 추천*/
-.foodList {
-}
-
-.foodList > li {
-    float: left;
-    list-style-type: none;
-}
-
-.recommend {
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 300px;
-    height: 200px;
-    border: 2px solid black;
-    border-radius: 30px;
-    transition: transform 0.1s;
-    transform-origin: center;
-}
-
-.recommend:hover {
-    transform: scale(1.05);
 }
 
 /*footer에 들어가는 내용*/
