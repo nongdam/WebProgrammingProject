@@ -44,8 +44,8 @@ nav {
 section {
     float: left;
     width: 100%;
-    height: 80%;
-    background-color: 0;
+    height: 80%; 
+    background-color: #fffdd0;
 }
 
 article {}
@@ -53,7 +53,7 @@ article {}
 footer {
     float: left;
     width: 100%;
-    height: 5%;
+    height: 15%;
     background-color: plum;
 }
 
@@ -99,12 +99,38 @@ div.container {
 .colortest {
     display: block;
 }
+
 .colortest > div {
+    display: inline-block;
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
+/*요리 추천*/
+.foodList {
+}
+
+.foodList > li {
+    float: left;
+    list-style-type: none;
+}
+
+.recommend {
+    margin-left: 50px;
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 30px;
+    transition: transform 0.1s;
+    transform-origin: center;
+}
+
+.recommend:hover {
+    transform: scale(1.05);
+}
+
+/*footer에 들어가는 내용*/
 .circle1 {
     background-color: #fffdd0;
 }
