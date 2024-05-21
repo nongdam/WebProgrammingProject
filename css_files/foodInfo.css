@@ -56,7 +56,7 @@ header {
 nav {
     float: left;
     width: 100%;
-    height: 10%;
+    height: 70px;
     background-color: #556b2f;
 }
 
@@ -87,6 +87,126 @@ h1.title {
 .title_logo {
     padding-right: 4px;
     height: 32px;
+}
+
+/* 검색 */
+nav > .container:last-child {
+    margin-top: 8px;
+    float: right;
+    width: 30%;
+}
+nav .search {
+    float: right;
+    margin: 0 auto;
+    margin-right: 40px;
+	flex-direction: row;
+	flex-basis: 45px;
+    border: 5px solid #1f3f5f;
+	background-color: #fff;
+}
+.search input {
+	flex-grow: 1;
+	height: 40px;
+	padding: 0 20px;
+	line-height: 45px;
+	border: 0;
+	box-sizing: border-box;
+	background: none;
+	min-width: 250px;
+}
+
+/*navigation 메뉴바*/
+nav > container {
+    margin-left: 40px;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+}
+
+ul.nav_bar {
+    float: left;
+    background-color: #556b2f;
+    padding: 8px 0px 8px 0px
+}
+
+ul.nav_bar > li {
+    list-style-type: none;
+    padding-left: 32px;
+    text-align:center; 
+    display: inline-block;
+}
+
+ul.nav_bar > li:first-child {
+    padding-left:8px;
+}
+
+ul.nav_bar > li:last-child {
+    padding-right:8px;
+}
+
+/*섹션에 들어가는 내용*/
+div.container {
+    width: 100%;
+}
+
+.colortest {
+    display: block;
+}
+
+.colortest > div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* 레시피 스타일 */
+.recipe {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.recipe-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.recipe-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.recipe-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.recipe-rating,
+.recipe-ingredients,
+.recipe-calories,
+.recipe-nutrients,
+.recipe-method {
+    flex: 1 1 100%;
+}
+
+.recipe-ingredients h3,
+.recipe-method h3 {
+    margin-top: 0;
+}
+
+.recipe-ingredients ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 /*footer에 들어가는 내용*/
