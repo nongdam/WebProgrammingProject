@@ -97,8 +97,9 @@ h1.title {
 /* 검색 */
 nav > .container:last-child {
     margin-top: 8px;
+    margin-right: 10%;
     float: right;
-    width: 30%;
+    width: 20%;
 }
 nav .search {
     float: right;
@@ -122,13 +123,13 @@ nav .search {
 
 /*navigation 메뉴바*/
 nav > container {
-    margin-left: 40px;
     float: left;
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
 }
 
 ul.nav_bar {
+    margin-left: 10%;
     float: left;
     background-color: #556b2f;
     padding: 8px 0px 8px 0px
