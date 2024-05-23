@@ -5,6 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/foodInfo.css">
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const stars = document.querySelectorAll('.star');
+        const averageRatingElem = document.getElementById('average-rating');
+        const ratingKey = 'kimchi-fried-rice-ratings';
+        const userRatedKey = 'kimchi-fried-rice-user-rated';
+        const userRatingValueKey = 'kimchi-fried-rice-user-rating-value';
+
+        function calculateAverage(ratings) {
+            const sum = ratings.reduce((a, b) => a + b, 0);
+            return (sum / ratings.length).toFixed(1);
+        }
+
+        function updateAverageRating() {
+            const ratings = JSON.parse(sessionStorage.getItem(ratingKey)) || [];
+            let average;
+
+            if (ratings.length === 0) {
+                average = (Math.random() * 5).toFixed(1);
+            } else {
+                average = calculateAverage(ratings);
+            }
+
+            averageRatingElem.textContent = `평균 평점: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
+        }
+
+        function saveUserRating(ratingValue) {
+            let ratings = JSON.parse(sessionStorage.getItem(ratingKey)) || [];
+            ratings.push(ratingValue);
+            sessionStorage.setItem(ratingKey, JSON.stringify(ratings));
+            sessionStorage.setItem(userRatedKey, 'true');
+            sessionStorage.setItem(userRatingValueKey, ratingValue);
+        }
+
+        function highlightStars(index) {
+            stars.forEach((star, i) => {
+                if (i <= index) {
+                    star.classList.add('hovered');
+                } else {
+                    star.classList.remove('hovered');
+                }
+            });
+        }
+
+        function resetStars() {
+            stars.forEach(star => star.classList.remove('hovered'));
+        }
+
+        function setSelectedStars(ratingValue) {
+            stars.forEach((star, i) => {
+                if (i < ratingValue) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        let userRated = sessionStorage.getItem(userRatedKey) === 'true';
+        const userRatingValue = parseInt(sessionStorage.getItem(userRatingValueKey));
+
+        if (userRated && userRatingValue) {
+            setSelectedStars(userRatingValue);
+        }
+
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                if (userRated) {
+                    alert("이미 평가했습니다.");
+                } else {
+                    const ratingValue = parseInt(star.getAttribute('data-value'));
+                    saveUserRating(ratingValue);
+                    setSelectedStars(ratingValue);
+                    updateAverageRating();
+                    userRated = true;
+                }
+            });
+
+            star.addEventListener('mouseover', () => {
+                highlightStars(index);
+            });
+
+            star.addEventListener('mouseout', () => {
+                resetStars();
+            });
+        });
+
+        updateAverageRating();
+    });
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -34,14 +124,19 @@
         </nav>
         <section>
             <div class="recipe">
-                <h2 class="recipe-name">요리 이름: 김치 볶음밥</h2>
+                <h2 class="recipe-name">김치 볶음밥</h2>
                 <div class="recipe-image">
                     <img src="../Assets/kimchi-fried-rice.jpg" alt="김치 볶음밥">
                 </div>
                 <div class="recipe-info">
-                    <div class="recipe-rating">평점: ★★★★☆</div>
+                    <div class="recipe-ratingtime">
+                        <div class="recipe-rating">
+                            <div id="average-rating"><span>평균 평점</span>: ★★★★☆</div>
+                        </div>
+                        <div class="recipe-time"><span>예상 조리 시간</span>: 약 15분</div>
+                    </div>
                     <div class="recipe-ingredients">
-                        <h3>재료:</h3>
+                        <h3>재료</h3>
                         <ul>
                             <li>밥 1그릇</li>
                             <li>김치 100g</li>
@@ -53,11 +148,21 @@
                     <div class="recipe-calories">칼로리: 500kcal</div>
                     <div class="recipe-nutrients">영양소 구성: 탄수화물 70g, 단백질 10g, 지방 20g</div>
                     <div class="recipe-method">
-                        <h3>조리법:</h3>
-                        <p>1. 김치를 볶습니다.</p>
-                        <p>2. 밥을 넣고 함께 볶습니다.</p>
-                        <p>3. 고추장을 추가하고 섞습니다.</p>
-                        <p>4. 마지막으로 참기름과 깨를 뿌립니다.</p>
+                        <h3>조리법</h3>
+                        <ol>
+                            <li>김치를 볶습니다.</li>
+                            <li>밥을 넣고 함께 볶습니다.</li>
+                            <li>고추장을 추가하고 섞습니다.</li>
+                            <li>마지막으로 참기름과 깨를 뿌립니다.</li>
+                        </ol>
+                    </div>
+                    <div id="star-container">
+                        <span>평점</span>: 
+                        <button class="star" data-value="1">★</button>
+                        <button class="star" data-value="2">★</button>
+                        <button class="star" data-value="3">★</button>
+                        <button class="star" data-value="4">★</button>
+                        <button class="star" data-value="5">★</button>
                     </div>
                 </div>
             </div>
