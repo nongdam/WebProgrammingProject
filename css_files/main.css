@@ -61,7 +61,7 @@ nav {
 }
 
 section {
-    overflow-y: hidden;
+    overflow-y: scroll;
     float: left;
     width: 100%;
     height: 80%; 
@@ -155,6 +155,11 @@ ul.nav_bar > li:last-child {
 /*섹션에 들어가는 내용*/
 div.container {
     width: 100%;
+}
+
+section  .subtitle {
+    margin-bottom: 5px;
+    font-size: 36px;
 }
 
 .colortest {
