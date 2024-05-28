@@ -5,7 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/foodInfo.css">
-    <script>    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', (event) => {
+        const data = [
+            {
+                "name": "김치 볶음밥",
+                "image": "../Assets/foods/kimchi-fried-rice.jpg",
+                "average-rating": 3,
+                "time": "약 15분",
+                "category": "한식",
+                "ingredients": ["밥 1그릇", "김치 100g", "고추장 1큰술", "참기름 1작은술", "깨 약간"],
+                "calories": "500kcal",
+                "nutrients": ["탄수화물 70g", "단백질 10g", "지방 20g"],
+                "method": ["김치를 볶습니다.", "밥을 넣고 함께 볶습니다.", "고추장을 추가하고 섞습니다.", "마지막으로 참기름과 깨를 뿌립니다."]
+            }
+        ];
+
+            const recipe = data[0];
+            const averageRating = recipe["average-rating"];
+            const ingredientsList = recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+            const methodList = recipe.method.map(step => `<li>${step}</li>`).join('');
+
+            const recipeHtml = `
+                <div class="recipe">
+                    <h2 class="recipe-name">${recipe.name}</h2>
+                    <div class="recipe-image">
+                        <img src="${recipe.image}" alt="${recipe.name}">
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-ratingtime">
+                            <div class="recipe-rating">
+                                <div id="average-rating"><span>평균 평점</span>: ${'★'.repeat(averageRating)}${'☆'.repeat(5 - averageRating)} (${averageRating.toFixed(1)})</div>
+                            </div>
+                            <div class="recipe-time"><span>예상 조리 시간</span>: ${recipe.time}</div>
+                            <div class="recipe-category"><span>분류</span>: ${recipe.category}</div>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <h3>재료</h3>
+                            <ul>${ingredientsList}</ul>
+                        </div>
+                        <div class="recipe-calories"><span>칼로리</span>: ${recipe.calories}</div>
+                        <div class="recipe-nutrients"><span>영양소 구성</span>: ${recipe.nutrients.join(', ')}</div>
+                        <div class="recipe-method">
+                            <h3>조리법</h3>
+                            <ol>${methodList}</ol>
+                        </div>
+                        <div id="star-container">
+                            <span>평점</span>: 
+                            <button class="star" data-value="1">★</button>
+                            <button class="star" data-value="2">★</button>
+                            <button class="star" data-value="3">★</button>
+                            <button class="star" data-value="4">★</button>
+                            <button class="star" data-value="5">★</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $('section').html(recipeHtml);
+        });
+    </script>
+    <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         
         // URL에서 쿼리 파라미터 가져오기
@@ -149,52 +210,8 @@
             </div>
         </nav>
         <section>
-            <div class="recipe">
-                <h2 class="recipe-name">김치 볶음밥</h2>
-                <div class="recipe-image">
-                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="김치 볶음밥">
-                </div>
-                <div class="recipe-info">
-                    <div class="recipe-ratingtime">
-                        <div class="recipe-rating">
-                            <div id="average-rating"><span>평균 평점</span>: ★★★★☆</div>
-                        </div>
-                        <div class="recipe-time"><span>예상 조리 시간</span>: 약 15분</div>
-                    </div>
-                    <div class="recipe-ingredients">
-                        <h3>재료</h3>
-                        <ul>
-                            <li>밥 1그릇</li>
-                            <li>김치 100g</li>
-                            <li>고추장 1큰술</li>
-                            <li>참기름 1작은술</li>
-                            <li>깨 약간</li>
-                        </ul>
-                    </div>
-                    <div class="recipe-calories">칼로리: 500kcal</div>
-                    <div class="recipe-nutrients">영양소 구성: 탄수화물 70g, 단백질 10g, 지방 20g</div>
-                    <div class="recipe-method">
-                        <h3>조리법</h3>
-                        <ol>
-                            <li>김치를 볶습니다.</li>
-                            <li>밥을 넣고 함께 볶습니다.</li>
-                            <li>고추장을 추가하고 섞습니다.</li>
-                            <li>마지막으로 참기름과 깨를 뿌립니다.</li>
-                        </ol>
-                    </div>
-                    <div id="star-container">
-                        <span>평점</span>: 
-                        <button class="star" data-value="1">★</button>
-                        <button class="star" data-value="2">★</button>
-                        <button class="star" data-value="3">★</button>
-                        <button class="star" data-value="4">★</button>
-                        <button class="star" data-value="5">★</button>
-                    </div>
-                </div>
-            </div>
         </section>
         <footer>
-
         </footer>
     </div>
 </body>

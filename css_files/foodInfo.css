@@ -241,9 +241,11 @@ div.container {
     margin-top: 20px;
     margin: 0 10px;
 }
-.recipe-rating > span {font-weight: bold;}
-.recipe-time > span {font-weight: bold;}
-
+.recipe-rating > span, 
+.recipe-time > span ,
+.recipe-category > span,
+.recipe-calories > span,
+.recipe-nutrients > span {font-weight: bold;}
 .recipe-ingredients,
 .recipe-calories,
 .recipe-nutrients,
