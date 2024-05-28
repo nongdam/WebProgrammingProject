@@ -13,6 +13,7 @@
                 "name": "김치 볶음밥",
                 "image": "../Assets/foods/kimchi-fried-rice.jpg",
                 "average-rating": 3,
+                "rating-count": 10,
                 "time": "약 15분",
                 "category": "한식",
                 "ingredients": ["밥 1그릇", "김치 100g", "고추장 1큰술", "참기름 1작은술", "깨 약간"],
@@ -22,100 +23,68 @@
             }
         ];
 
-            const recipe = data[0];
-            const averageRating = recipe["average-rating"];
-            const ingredientsList = recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
-            const methodList = recipe.method.map(step => `<li>${step}</li>`).join('');
+        const recipe = data[0];
+        const recipeName = recipe.name.replace(/\s+/g, '-').toLowerCase();
+        const initialAverageRating = recipe["average-rating"];
+        const initialRatingCount = recipe["rating-count"];
+        const ingredientsList = recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+        const methodList = recipe.method.map(step => `<li>${step}</li>`).join('');
 
-            const recipeHtml = `
-                <div class="recipe">
-                    <h2 class="recipe-name">${recipe.name}</h2>
-                    <div class="recipe-image">
-                        <img src="${recipe.image}" alt="${recipe.name}">
+        const recipeHtml = `
+            <div class="recipe">
+                <h2 class="recipe-name">${recipe.name}</h2>
+                <div class="recipe-image">
+                    <img src="${recipe.image}" alt="${recipe.name}">
+                </div>
+                <div class="recipe-info">
+                    <div class="recipe-ratingtime">
+                        <div class="recipe-rating">
+                            <div id="average-rating"><span>평균 평점</span>: ${'★'.repeat(initialAverageRating)}${'☆'.repeat(5 - initialAverageRating)} (${initialAverageRating.toFixed(1)})</div>
+                        </div>
+                        <div class="recipe-time"><span>예상 조리 시간</span>: ${recipe.time}</div>
+                        <div class="recipe-category"><span>분류</span>: ${recipe.category}</div>
                     </div>
-                    <div class="recipe-info">
-                        <div class="recipe-ratingtime">
-                            <div class="recipe-rating">
-                                <div id="average-rating"><span>평균 평점</span>: ${'★'.repeat(averageRating)}${'☆'.repeat(5 - averageRating)} (${averageRating.toFixed(1)})</div>
-                            </div>
-                            <div class="recipe-time"><span>예상 조리 시간</span>: ${recipe.time}</div>
-                            <div class="recipe-category"><span>분류</span>: ${recipe.category}</div>
-                        </div>
-                        <div class="recipe-ingredients">
-                            <h3>재료</h3>
-                            <ul>${ingredientsList}</ul>
-                        </div>
-                        <div class="recipe-calories"><span>칼로리</span>: ${recipe.calories}</div>
-                        <div class="recipe-nutrients"><span>영양소 구성</span>: ${recipe.nutrients.join(', ')}</div>
-                        <div class="recipe-method">
-                            <h3>조리법</h3>
-                            <ol>${methodList}</ol>
-                        </div>
-                        <div id="star-container">
-                            <span>평점</span>: 
-                            <button class="star" data-value="1">★</button>
-                            <button class="star" data-value="2">★</button>
-                            <button class="star" data-value="3">★</button>
-                            <button class="star" data-value="4">★</button>
-                            <button class="star" data-value="5">★</button>
-                        </div>
+                    <div class="recipe-ingredients">
+                        <h3>재료</h3>
+                        <ul>${ingredientsList}</ul>
+                    </div>
+                    <div class="recipe-calories"><span>칼로리</span>: ${recipe.calories}</div>
+                    <div class="recipe-nutrients"><span>영양소 구성</span>: ${recipe.nutrients.join(', ')}</div>
+                    <div class="recipe-method">
+                        <h3>조리법</h3>
+                        <ol>${methodList}</ol>
+                    </div>
+                    <div id="star-container">
+                        <span>평점</span>: 
+                        <button class="star" data-value="1">★</button>
+                        <button class="star" data-value="2">★</button>
+                        <button class="star" data-value="3">★</button>
+                        <button class="star" data-value="4">★</button>
+                        <button class="star" data-value="5">★</button>
                     </div>
                 </div>
-            `;
+            </div>
+        `;
 
-            $('section').html(recipeHtml);
-        });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        
-        // URL에서 쿼리 파라미터 가져오기
-    function getParameterByName(name, url = window.location.href) {
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+        $('section').html(recipeHtml);
 
-    // 페이지 요소 업데이트
-    const recipeName = getParameterByName('foodName');
-    const recipeCategory = getParameterByName('foodTag');
-
-    if(recipeName) {
-        document.querySelector('.recipe-name').textContent = recipeName;
-        document.title += ` - ${recipeName}`; // 타이틀에도 음식 이름 추가
-    }
-
-    if(recipeCategory) {
-        const categoryElem = document.createElement('h3');
-        categoryElem.textContent = `범주: ${recipeCategory}`;
-        document.querySelector('.recipe-info').prepend(categoryElem);
-    }
-        
         const stars = document.querySelectorAll('.star');
         const averageRatingElem = document.getElementById('average-rating');
-        const ratingKey = 'kimchi-fried-rice-ratings';
-        const userRatedKey = 'kimchi-fried-rice-user-rated';
-        const userRatingValueKey = 'kimchi-fried-rice-user-rating-value';
+        const ratingKey = `${recipeName}-ratings`;
+        const userRatedKey = `${recipeName}-user-rated`;
+        const userRatingValueKey = `${recipeName}-user-rating-value`;
 
-        function calculateAverage(ratings) {
-            const sum = ratings.reduce((a, b) => a + b, 0);
-            return (sum / ratings.length).toFixed(1);
+        function calculateAverage(ratings, initialAverage, initialCount) {
+            const sum = ratings.reduce((a, b) => a + b, 0) + (initialAverage * initialCount);
+            const count = ratings.length + initialCount;
+            return (sum / count).toFixed(1);
         }
 
         function updateAverageRating() {
             const ratings = JSON.parse(sessionStorage.getItem(ratingKey)) || [];
-            let average;
+            const average = calculateAverage(ratings, initialAverageRating, initialRatingCount);
 
-            if (ratings.length === 0) {
-                average = (Math.random() * 5).toFixed(1);
-            } else {
-                average = calculateAverage(ratings);
-            }
-
-            averageRatingElem.textContent = `평균 평점: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
+            averageRatingElem.innerHTML = `<span>평균 평점</span>: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
         }
 
         function saveUserRating(ratingValue) {
