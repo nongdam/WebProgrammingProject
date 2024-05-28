@@ -64,7 +64,7 @@ section {
     overflow-y: scroll;
     float: left;
     width: 100%;
-    height: 80%; 
+    height: 90%; 
     background-color: #fffdd0;
 }
 
@@ -75,7 +75,7 @@ article {
 footer {
     float: left;
     width: 100%;
-    height: 15%;
+    height: 5%;
     background-color: #87CEEB;
 }
 

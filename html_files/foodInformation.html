@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/foodInfo.css">
-    <script>
+    <script>    
     document.addEventListener('DOMContentLoaded', (event) => {
+        
+        // URL에서 쿼리 파라미터 가져오기
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // 페이지 요소 업데이트
+    const recipeName = getParameterByName('foodName');
+    const recipeCategory = getParameterByName('foodTag');
+
+    if(recipeName) {
+        document.querySelector('.recipe-name').textContent = recipeName;
+        document.title += ` - ${recipeName}`; // 타이틀에도 음식 이름 추가
+    }
+
+    if(recipeCategory) {
+        const categoryElem = document.createElement('h3');
+        categoryElem.textContent = `범주: ${recipeCategory}`;
+        document.querySelector('.recipe-info').prepend(categoryElem);
+    }
+        
         const stars = document.querySelectorAll('.star');
         const averageRatingElem = document.getElementById('average-rating');
         const ratingKey = 'kimchi-fried-rice-ratings';
@@ -126,7 +152,7 @@
             <div class="recipe">
                 <h2 class="recipe-name">김치 볶음밥</h2>
                 <div class="recipe-image">
-                    <img src="../Assets/kimchi-fried-rice.jpg" alt="김치 볶음밥">
+                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="김치 볶음밥">
                 </div>
                 <div class="recipe-info">
                     <div class="recipe-ratingtime">

@@ -1,0 +1,62 @@
+section > div.container {
+    width: 1200;
+    height: 100%;
+}
+
+.container > table {
+    border: 2px solid black;
+    text-align: center;
+}
+tr > th:nth-child(1) {
+    width: 50px;
+}
+tr > th:nth-child(2) {
+    width: 900px;
+}
+tr > th:nth-child(3) {
+    width: 250px;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.result-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: calc(33% - 40px);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.result-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.result-header span {
+    font-size: 12px;
+    background-color: #efefef;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #666;
+}
+
+.result-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
