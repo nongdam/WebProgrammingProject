@@ -81,9 +81,9 @@ footer {
 .title-container {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: absolute; /*절대 좌표 활용*/
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); 
 }
 h1.title {
     display: inline;
