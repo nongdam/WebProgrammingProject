@@ -39,9 +39,9 @@
                 <div class="recipe-info">
                     <div class="recipe-ratingtime">
                         <div class="recipe-rating">
-                            <div id="average-rating"><span>평균 평점</span>: ${'★'.repeat(initialAverageRating)}${'☆'.repeat(5 - initialAverageRating)} (${initialAverageRating.toFixed(1)})</div>
+                            <div id="average-rating"><span>평점</span>: ${'★'.repeat(initialAverageRating)}${'☆'.repeat(5 - initialAverageRating)} (${initialAverageRating.toFixed(1)})</div>
                         </div>
-                        <div class="recipe-time"><span>예상 조리 시간</span>: ${recipe.time}</div>
+                        <div class="recipe-time"><span>조리 시간</span>: ${recipe.time}</div>
                         <div class="recipe-category"><span>분류</span>: ${recipe.category}</div>
                     </div>
                     <div class="recipe-ingredients">
@@ -50,6 +50,14 @@
                     </div>
                     <div class="recipe-calories"><span>칼로리</span>: ${recipe.calories}</div>
                     <div class="recipe-nutrients"><span>영양소 구성</span>: ${recipe.nutrients.join(', ')}</div>
+                    <div class="recipe-timer">
+                        <div><span>타이머</span></div>
+                        <span>설정 시간 (분)</span>: <input type="number" id="time-input" min="1" value="1">
+                        <button id="start-timer">시작</button>
+                        <div>
+                            <span>남은 시간</span>: <span id="timer">00:00</span>
+                        </div>
+                    </div>
                     <div class="recipe-method">
                         <h3>조리법</h3>
                         <ol>${methodList}</ol>
@@ -84,7 +92,7 @@
             const ratings = JSON.parse(sessionStorage.getItem(ratingKey)) || [];
             const average = calculateAverage(ratings, initialAverageRating, initialRatingCount);
 
-            averageRatingElem.innerHTML = `<span>평균 평점</span>: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
+            averageRatingElem.innerHTML = `<span>평점</span>: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
         }
 
         function saveUserRating(ratingValue) {
@@ -149,6 +157,35 @@
         });
 
         updateAverageRating();
+
+        let timerInterval;
+
+        document.getElementById('start-timer').addEventListener('click', () => {
+            const inputMinutes = parseInt(document.getElementById('time-input').value, 10);
+            if (isNaN(inputMinutes) || inputMinutes <= 0) {
+                alert('유효한 시간을 입력하세요.');
+                return;
+            }
+
+            let totalTime = inputMinutes * 60;
+            clearInterval(timerInterval); // 기존 타이머 중지
+            
+            function updateTimer() {
+                if (totalTime <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('timer').textContent = '00:00';
+                    return;
+                }
+
+                const minutes = Math.floor(totalTime / 60);
+                const seconds = totalTime % 60;
+                document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                totalTime -= 1;
+            }
+
+            timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        });
     });
     </script>
 </head>
