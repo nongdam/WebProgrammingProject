@@ -1,0 +1,64 @@
+{
+    "recipes": [
+        {
+            "name": "비빔밥",
+            "image": "../Assets/foods/비빔밥.jpg",
+            "average-rating": 4.5,
+            "rating-count": 45,
+            "time": "약 15분",
+            "category": "한식",
+            "ingredients": ["쌀", "계란", "고추장", "김", "당근", "오이", "시금치", "콩나물"],
+            "calories": "550kcal",
+            "nutrients": ["탄수화물 80g", "단백질 15g", "지방 20g"],
+            "method": ["밥을 지읍니다.", "재료를 모두 썰고 준비합니다.", "재료를 기름에 볶습니다.", "밥 위에 볶은 재료와 고추장을 올려 비빕니다."]
+        },
+        {
+            "name": "김치찌개",
+            "image": "../Assets/foods/김치찌개.jpg",
+            "average-rating": 4.7,
+            "rating-count": 30,
+            "time": "약 20분",
+            "category": "한식",
+            "ingredients": ["김치", "돼지고기", "두부", "양파", "대파", "마늘", "고추가루"],
+            "calories": "300kcal",
+            "nutrients": ["탄수화물 15g", "단백질 25g", "지방 15g"],
+            "method": ["돼지고기를 볶습니다.", "김치를 넣고 볶다가 물을 부어 끓입니다.", "양념을 풀고 대파와 두부를 넣어 끓입니다."]
+        },
+        {
+            "name": "파스타",
+            "image": "../Assets/foods/파스타.jpg",
+            "average-rating": 4.2,
+            "rating-count": 25,
+            "time": "약 20분",
+            "category": "양식",
+            "ingredients": ["파스타 면", "토마토 소스", "바질", "올리브 오일", "마늘"],
+            "calories": "450kcal",
+            "nutrients": ["탄수화물 70g", "단백질 10g", "지방 15g"],
+            "method": ["면을 삶습니다.", "마늘과 토마토 소스를 볶습니다.", "삶은 면을 소스에 볶습니다.", "바질로 마무리합니다."]
+        },
+        {
+            "name": "치킨 커리",
+            "image": "../Assets/foods/치킨커리.jpg",
+            "average-rating": 4.0,
+            "rating-count": 18,
+            "time": "약 25분",
+            "category": "인도 요리",
+            "ingredients": ["치킨", "커리 파우더", "요거트", "토마토", "양파", "마늘", "생강"],
+            "calories": "350kcal",
+            "nutrients": ["탄수화물 10g", "단백질 30g", "지방 20g"],
+            "method": ["치킨을 요거트와 커리 파우더에 재웁니다.", "양파, 마늘, 생강을 볶습니다.", "토마토와 치킨을 넣고 끓입니다."]
+        },
+        {
+            "name": "샐러드",
+            "image": "../Assets/foods/샐러드.jpg",
+            "average-rating": 4.5,
+            "rating-count": 22,
+            "time": "약 10분",
+            "category": "양식",
+            "ingredients": ["상추", "토마토", "오이", "치즈", "올리브 오일", "발사믹 식초"],
+            "calories": "200kcal",
+            "nutrients": ["탄수화물 5g", "단백질 5g", "지방 15g"],
+            "method": ["야채를 씻고 썰습니다.", "모든 재료를 볼에 넣습니다.", "올리브 오일과 발사믹 식초로 드레싱합니다."]
+        }
+    ]
+}
