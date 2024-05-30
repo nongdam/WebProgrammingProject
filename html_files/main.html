@@ -6,6 +6,9 @@
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/main.css">
     <link rel="stylesheet" href="../css_files/foodCard.css">
+    <script src="../scripts/search.js"></script>
+        
+        
 </head>
 <body>
     <div class="wrap">
@@ -41,46 +44,39 @@
                     <h3 class="subtitle">추천 음식</h3>
                     <ul class="foodList">
                         <li>
-                            <a href="./foodInformation.html">
-                                <div class="foodCard">
+                            <form action="./foodInformation.html" method="get">
+                                <button type="submit" class="foodCard">
                                     <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
-                                    <h1 id="foodName">음식 이름</h1>
-                                    <h3 id="foodTag">음식 범주</h2>
-                                </div>
-                            </a>
+                                    <input type="hidden" name="foodName" value="비빔밥">
+                                    <input type="hidden" name="foodTag" value="한식">
+                                    <h1>비빔밥</h1>
+                                    <h3>한식</h3>
+                                </button>
+                            </form>
                         </li>
+                        
                         <li>
-                            <a href="./foodInformation.html">
-                                <div class="foodCard">
-                                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
-                                    <h1 id="foodName">음식 이름</h1>
-                                    <h3 id="foodTag">음식 범주</h2>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="./foodInformation.html">
-                                <div class="foodCard">
-                                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
-                                    <h1 id="foodName">음식 이름</h1>
-                                    <h3 id="foodTag">음식 범주</h2>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="./foodInformation.html">
-                                <div class="foodCard">
-                                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
-                                    <h1 id="foodName">음식 이름</h1>
-                                    <h3 id="foodTag">음식 범주</h2>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="./foodInformation.html">
-                                <div class="foodCard">
-                                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
-                                    <h1 id="foodName">음식 이름</h1>
-                                    <h3 id="foodTag">음식 범주</h2>
-                                </div>
-                            </a>
+                            <form action="./foodInformation_김치볶음밥.html" method="get">
+                                <button type="submit" class="foodCard">
+                                    <img src="../Assets/foods/kimchi-fried-rice.jpg" alt="이미지 로딩 오류" class="recommend">
+                                    <input type="hidden" name="foodName" value="김치볶음밥">
+                                    <input type="hidden" name="foodTag" value="한식">
+                                    <h1>김치볶음밥</h1>
+                                    <h3>한식</h3>
+                                </button>
+                            </form>
+                        </li>
+                        
+                        <li>
+                            <form action="./foodInformation_소세지강정.html" method="get">
+                                <button type="submit" class="foodCard">
+                                    <img src="../Assets/foods/소세지강정.jpg" alt="이미지 로딩 오류" class="recommend">
+                                    <input type="hidden" name="foodName" value="소세지강정">
+                                    <input type="hidden" name="foodTag" value="양식">
+                                    <h1>소세지강정</h1>
+                                    <h3>양식</h3>
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </article>
