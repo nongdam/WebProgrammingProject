@@ -9,33 +9,44 @@
     <script src="../scripts/search.js"></script>
 
     <script src="../scripts/loadingInfo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!--반응형 카테고리 메뉴-->
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".menuBtn").click(function() {
+            jQuery(".nav_bar_box").slideToggle();
+        });
+    });
+    </script>
         
 </head>
 <body>
     <div class="wrap">
         <header>
-            <a href="main.html">
+            <a href="main.html" class="title-container">
                 <img src="../Assets/Icons/logo1.png" alt="사이트 로고" class="title_logo">
                 <h1 class="title">혼밥도 건강하게!</h1>
             </a>
-        </header>
-        <nav>
-            <div class="container">
-                <ul class="nav_bar">
-                    <li><a href="">필수 영양소 소개</a></li>
-                    <li><a href="">영양소별 레시피</a></li>
-                    <li><a href="">일일 권장 영양소 섭취량</a></li>
-                    <li><a href="">빠른 조리순 레시피</a></li>
-                    <li><a href="">랜덤 레시피 페이지</a></li>
-                    <li><a href="">분류별 레시피</a></li>
-                    <li><a href="">문의사항</a></li>
-                </ul>
-            </div>
             <div class="container">
                 <div class="search">
                     <form action="" method="get">
                         <input class="searchInput" type="text" name="search" value="" placeholder="검색어를 입력하세요.">
                     </form>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <button type="button" class="menuBtn">
+                    <i><img src="../Assets/Icons/menu.png" style="width: 20px; height: 20px;"/></i><span>MENU</span>
+                </button>
+                <div class="nav_bar_box">
+                    <ul class="nav_bar">
+                        <li><a href="./foodIntroduceNutrients.html">영양소 소개</a></li>
+                        <li><a href="">랜덤 레시피 페이지</a></li>
+                        <li><a href="">영양소 소개</a></li>
+                        <li><a href="">영양소 소개</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
