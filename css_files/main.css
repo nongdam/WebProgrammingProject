@@ -120,6 +120,9 @@ header .search {
     border: 5px solid #1f3f5f;
     background-color: #fff;
 }
+.search > form {
+    width: 100%;
+}
 .search input {
     height: 40px;
     padding: 0 20px;
