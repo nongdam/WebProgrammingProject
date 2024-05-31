@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
             `;
             container.appendChild(recipeElement);
         });
+        
+        // 데이터 로드가 완료되면 커스텀 이벤트를 트리거
+        const event = new CustomEvent('recipesLoaded');
+        document.dispatchEvent(event);
     })
     .catch(error => {
         console.error('Error loading the recipes:', error);

@@ -7,15 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // URL에서 'search' 파라미터를 가져옴
     const searchQuery = getQueryParam('search');
-    const foodItems = document.querySelectorAll('.foodList li');
 
     // 페이지 로드 시 검색어가 URL에 있을 경우 필터링 실행
-    if (searchQuery) {
-        filterItems(searchQuery.toLowerCase());
-    }
+    document.addEventListener('recipesLoaded', function() {
+        if (searchQuery) {
+            filterItems(searchQuery.toLowerCase());
+        }
+    });
 
     // 검색어에 따라 아이템을 필터링하는 함수
     function filterItems(query) {
+        const foodItems = document.querySelectorAll('.foodList li');
         foodItems.forEach(function(item) {
             const name = item.querySelector('h1').textContent.toLowerCase();
             const category = item.querySelector('h3').textContent.toLowerCase();
