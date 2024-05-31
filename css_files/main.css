@@ -18,6 +18,21 @@ html {
     border: 2px solid gray;
 }
 
+section::-webkit-scrollbar {
+    display: none;
+}
+
+/* 파이어폭스에서 스크롤바 숨기기 */
+section {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* 엣지 및 인터넷 익스플로러에서 스크롤바 숨기기 */
+section {
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+
 body {
     background-color: transparent;
     width: 100%;
@@ -67,6 +82,7 @@ nav {
 
 section {
     overflow-y: scroll;
+    s
     float: left;
     width: 100%;
     height: 90%; 
