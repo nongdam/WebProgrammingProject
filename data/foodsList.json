@@ -14,7 +14,7 @@
         },
         {
             "name": "김치찌개",
-            "image": "../Assets/foods/김치찌개.jpg",
+            "image": "../Assets/foods/깻잎조림.jpg",
             "average-rating": 4.7,
             "rating-count": 30,
             "time": "약 20분",
@@ -26,7 +26,7 @@
         },
         {
             "name": "파스타",
-            "image": "../Assets/foods/파스타.jpg",
+            "image": "../Assets/foods/소세지강정.jpg",
             "average-rating": 4.2,
             "rating-count": 25,
             "time": "약 20분",
@@ -38,7 +38,7 @@
         },
         {
             "name": "치킨 커리",
-            "image": "../Assets/foods/치킨커리.jpg",
+            "image": "../Assets/foods/간장계란밥.jpg",
             "average-rating": 4.0,
             "rating-count": 18,
             "time": "약 25분",
@@ -50,7 +50,7 @@
         },
         {
             "name": "샐러드",
-            "image": "../Assets/foods/샐러드.jpg",
+            "image": "../Assets/foods/김치볶음밥.jpg",
             "average-rating": 4.5,
             "rating-count": 22,
             "time": "약 10분",

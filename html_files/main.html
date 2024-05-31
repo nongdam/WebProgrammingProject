@@ -8,44 +8,7 @@
     <link rel="stylesheet" href="../css_files/foodCard.css">
     <script src="../scripts/search.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Fetching data from:", '/data/foodsList.json');
-fetch('/data/foodsList.json')
-.then(response => {
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    } else {
-        return response.json();
-    }
-})
-            .then(data => {
-                const container = document.querySelector('.foodList');
-                data.recipes.forEach(recipe => {
-                    const recipeElement = document.createElement('li');
-                    recipeElement.innerHTML = `
-                        <form action="./foodInformation_base.html" method="get">
-                            <button type="submit" class="foodCard">
-                                <img src="${recipe.image}" alt="${recipe.name}" class="recommend">
-                                <input type="hidden" name="foodName" value="${recipe.name}">
-                                <input type="hidden" name="foodTag" value="${recipe.category}">
-                                <input type="hidden" name="ingredients" value="${recipe.ingredients.join(',')}">
-                                <input type="hidden" name="method" value="${recipe.method.join('. ')}">
-                                <input type="hidden" name="calories" value="${recipe.calories}">
-                                <input type="hidden" name="nutrients" value="${recipe.nutrients.join(',')}">
-                                <h1>${recipe.name}</h1>
-                                <h3>${recipe.category}</h3>
-                            </button>
-                        </form>
-                    `;
-                    container.appendChild(recipeElement);
-                });
-            })
-            .catch(error => {
-                console.error('Error loading the recipes:', error);
-            });
-        });
-        </script>
+    <script src="../scripts/loadingInfo.js"></script>
         
 </head>
 <body>
@@ -84,7 +47,7 @@ fetch('/data/foodsList.json')
                         <li>
                             <form action="./foodInformation_base.html" method="get">
                                 <button type="submit" class="foodCard">
-                                    <img src="../Assets/foods/임시_비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
+                                    <img src="../Assets/foods/비빔밥.jpg" alt="이미지 로딩 오류" class="recommend">
                                     <input type="hidden" name="foodName" value="비빔밥">
                                     <input type="hidden" name="foodTag" value="한식">
                                     <h1>비빔밥</h1>
