@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <input type="hidden" name="calories" value="${recipe.calories}">
                         <input type="hidden" name="nutrients" value="${recipe.nutrients.join(',')}">
                         <input type="hidden" name="average-rating" value="${recipe["average-rating"]}">
+                        <input type="hidden" name="rating-count" value="${recipe["rating-count"]}"> <!-- rating-count 추가 -->
                         <h1>${recipe.name}</h1>
                         <h3>${recipe.category}</h3>
                     </button>
