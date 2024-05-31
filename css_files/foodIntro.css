@@ -267,6 +267,8 @@ ul.nav_bar > li a:hover {
         display: flex !important;
     }
 }
+/*섹션 글 스타일*/
+section h3, section h4 {text-align: center;}
 
 
 /*섹션에 들어가는 내용*/

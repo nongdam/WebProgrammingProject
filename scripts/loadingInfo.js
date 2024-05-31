@@ -23,9 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         <input type="hidden" name="foodTag" value="${recipe.category}">
                         <input type="hidden" name="image" value="${imageUrl}"> <!-- 이미지 경로 추가 -->
                         <input type="hidden" name="ingredients" value="${recipe.ingredients.join(',')}">
-                        <input type="hidden" name="method" value="${recipe.method.join('. ')}">
+                        <input type="hidden" name="method" value="${recipe.method.join('. .')}">
                         <input type="hidden" name="calories" value="${recipe.calories}">
                         <input type="hidden" name="nutrients" value="${recipe.nutrients.join(',')}">
+                        <input type="hidden" name="averageRating" value="${recipe['average-rating']}">
+                        <input type="hidden" name="ratingCount" value="${recipe['rating-count']}">
+                        <input type="hidden" name="time" value="${recipe['time']}">
                         <h1>${recipe.name}</h1>
                         <h3>${recipe.category}</h3>
                     </button>

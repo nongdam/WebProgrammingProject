@@ -24,8 +24,8 @@
             const data = [{
                 "name": getQueryVariable('foodName'),
                 "image": getQueryVariable('image') || '../Assets/placeholder-image.png', // 기본 이미지 경로 설정
-                "average-rating": 4, // 이 정보는 예제에서는 임의로 설정됨
-                "rating-count": 20, // 이 정보는 예제에서는 임의로 설정됨
+                "average-rating": parseFloat(getQueryVariable('averageRating')),
+                "rating-count": parseInt(getQueryVariable('ratingCount')) , // 이 정보는 예제에서는 임의로 설정됨
                 "time": getQueryVariable('time') || '조리 시간 정보 없음',
                 "category": getQueryVariable('foodTag'),
                 "ingredients": getQueryVariable('ingredients').split(','),
@@ -102,7 +102,6 @@
         function updateAverageRating() {
             const ratings = JSON.parse(sessionStorage.getItem(ratingKey)) || [];
             const average = calculateAverage(ratings, initialAverageRating, initialRatingCount);
-
             averageRatingElem.innerHTML = `<span>평점</span>: ${'★'.repeat(Math.round(average))}${'☆'.repeat(5 - Math.round(average))} (${average})`;
         }
 
@@ -138,7 +137,7 @@
             });
         }
 
-        let userRated = sessionStorage.getItem(userRatedKey) === 'true';
+        let userRated = JSON.parse(sessionStorage.getItem(userRatedKey));
         const userRatingValue = parseInt(sessionStorage.getItem(userRatingValueKey));
 
         if (userRated && userRatingValue) {
