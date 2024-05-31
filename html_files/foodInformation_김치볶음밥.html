@@ -6,6 +6,7 @@
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/foodInfo.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!--평점, 타이머, 객체 스크립트-->
     <script>
        document.addEventListener('DOMContentLoaded', (event) => {
         const data = [
@@ -188,6 +189,14 @@
         });
     });
     </script>
+    <!--반응형 카테고리 메뉴-->
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+    jQuery(".menuBtn").click(function() {
+        jQuery(".nav_bar_box").slideToggle();
+    });
+});
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -204,15 +213,17 @@
         </header>
         <nav>
             <div class="container">
-                <ul class="nav_bar">
-                    <li><a href="">필수 영양소 소개</a></li>
-                    <li><a href="">영양소별 레시피</a></li>
-                    <li><a href="">일일 권장 영양소 섭취량</a></li>
-                    <li><a href="">빠른 조리순 레시피</a></li>
-                    <li><a href="">랜덤 레시피 페이지</a></li>
-                    <li><a href="">분류별 레시피</a></li>
-                    <li><a href="">문의사항</a></li>
-                </ul>
+                <button type="button" class="menuBtn">
+                    <i><img src="../Assets/Icons/menu.png" style="width: 20px; height: 20px;"/></i><span>MENU</span>
+                </button>
+                <div class="nav_bar_box">
+                    <ul class="nav_bar">
+                        <li><a href="./foodIntroduceNutrients.html">영양소 소개</a></li>
+                        <li><a href="">랜덤 레시피 페이지</a></li>
+                        <li><a href="">영양소 소개</a></li>
+                        <li><a href="">영양소 소개</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <section>

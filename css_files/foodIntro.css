@@ -20,9 +20,7 @@ html {
 
 body {
     background-color: transparent;
-    width: 100%;
-    max-width: 1280px;
-    height: 100%;
+    width: 1280px;
     margin: 0 auto;
     padding: 0;
 }
@@ -56,6 +54,7 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 }
 
 nav {
@@ -63,20 +62,38 @@ nav {
     height: auto;
     width: 100%;
     background-color: #556b2f;
+    overflow: hidden;
 }
 
 section {
-    float: left;
-    width: 100%;
-    height: auto; 
+    width: 1280px;
+    overflow: hidden;
     background-color: #fffdd0;
+}
+.left{
+    width: 800px;
+    float: left;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+.right{
+    width: 420px;
+    float: right;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
 }
 
 footer {
-    float: left;
     width: 100%;
     height: 5%;
     background-color: plum;
+    overflow: hidden;
 }
 
 /*타이틀*/
@@ -222,7 +239,22 @@ ul.nav_bar > li a:hover {
         width: 100%;
         text-align: center; 
     }
-
+    body{
+        width: 768px;
+    }
+    section{
+        width: 768px;
+    }
+    .left {
+        width: 480px;
+        padding: 5px;
+        margin: 5px auto;
+    }
+    .right {
+        width: 250px;
+        padding: 5px;
+        margin: 5px auto;
+    }
 }
 @media(min-width:769px){
     .menuBtn{
@@ -245,131 +277,6 @@ ul.nav_bar > li a:hover {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-}
-
-/* 레시피 스타일 */
-.recipe {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-.recipe-name {
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.recipe-image {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.recipe-image img {
-    max-width: 400px;
-    border-radius: 10px;
-}
-
-.recipe-info {
-    text-align: center;
-}
-
-.recipe-ratingtime {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-.recipe-rating,
-.recipe-time,
-.recipe-category {
-    margin-top: 20px;
-    margin: 0 10px;
-}
-.recipe-rating > span, 
-.recipe-time > span ,
-.recipe-category > span,
-.recipe-calories > span,
-.recipe-nutrients > span {font-weight: bold;}
-
-.recipe-ingredients,
-.recipe-calories,
-.recipe-nutrients,
-.recipe-method {
-    margin-top: 20px;
-    flex: 1 1 100%;
-}
-
-.recipe-ingredients h3,
-.recipe-method h3 {
-    margin-top: 0;
-}
-
-.recipe-ingredients ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: center;
-}
-.recipe-ingredients ul li {
-    display: block;
-    margin: 5px 0;
-}
-
-.recipe-method ol {
-    list-style-position: decimal;
-    margin-top: 20px;
-    padding-left: 30%;
-    text-align: left;
-}
-.recipe-method ol li {
-    display: list-item;
-    margin: 5px 0;
-}
-/*레시피 타이머*/
-.recipe-timer {
-    text-align: center;
-    margin-top: 20px;
-}
-.recipe-timer > div > span {
-    font-weight: bold;
-}
-#time-input {
-    width: 50px;
-}
-#start-timer {
-    margin-left: 10px;
-}
-
-/* 평점 */
-#star-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.star {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: gray;
-    padding: 0;
-}
-
-.star:hover,
-.star.hovered,
-.star.selected {
-    color: gold;
-}
-#star-container > span {
-    font-weight: bold;
-}
-#average-rating {
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: bold;
 }
 
 /*footer에 들어가는 내용*/
