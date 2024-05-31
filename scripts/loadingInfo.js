@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
     .then(data => {
+        // 별점 순서대로 정렬
+        data.recipes.sort((a, b) => b["average-rating"] - a["average-rating"]);
+
         const container = document.querySelector('.foodList');
         data.recipes.forEach(recipe => {
             const defaultImage = '../Assets/placeholder-image.png'; // 기본 이미지 설정
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             `;
             container.appendChild(recipeElement);
         });
-        
+
         // 데이터 로드가 완료되면 커스텀 이벤트를 트리거
         const event = new CustomEvent('recipesLoaded');
         document.dispatchEvent(event);
