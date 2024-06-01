@@ -258,6 +258,9 @@ ul.nav_bar > li a:hover {
         padding: 5px;
         margin: 5px auto;
     }
+    .movie-container > iframe {
+        width: 480px;
+    }
 }
 @media(min-width:769px){
     .menuBtn{
