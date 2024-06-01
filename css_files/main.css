@@ -279,10 +279,21 @@ section  .subtitle {
 }
 
 /*요리 추천*/
+.foodList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
 
 .foodList > li {
-    float: left;
     list-style-type: none;
+    margin: 10px;
+}
+
+.foodList > li:nth-last-child(1), :nth-last-child(2), :nth-last-child(3) {
+    justify-self: left;
 }
 
 /*footer에 들어가는 내용*/
