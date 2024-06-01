@@ -239,16 +239,6 @@ ul.nav_bar > li a:hover {
 
 /*섹션에 들어가는 내용*/
 
-.colortest {
-    display: block;
-}
-
-.colortest > div {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
 
 /* 레시피 스타일 */
 .recipe {
