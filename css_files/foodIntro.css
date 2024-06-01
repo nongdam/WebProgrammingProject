@@ -262,6 +262,9 @@ ul.nav_bar > li a:hover {
         width: 480px;
         height: 270px;
     }
+    .r-image {
+        width: 250px!important;
+    }
 }
 @media(min-width:769px){
     .menuBtn{
@@ -273,6 +276,12 @@ ul.nav_bar > li a:hover {
 }
 /*섹션 글 스타일*/
 section h3, section h4 {text-align: center;}
+
+/*right 이미지*/
+.r-image {
+    width: 420px;
+    border: 1px solid black;
+}
 
 /*footer에 들어가는 내용*/
 

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
     <link rel="stylesheet" href="../css_files/foodIntro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!--반응형 카테고리 메뉴-->
     <script type="text/javascript">
@@ -16,18 +18,25 @@
     </script>
     <!--상단 이동 버튼-->
     <script>
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > 300){
-                $('.btn_gotop').show();
-            } else{
-                $('.btn_gotop').hide();
-            }
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 300){
+            $('.btn_gotop').show();
+        } else{
+            $('.btn_gotop').hide();
+        }
+    });
+    $('.btn_gotop').click(function(){
+        $('html, body').animate({scrollTop:0},400);
+        return false;
+    });
+    </script>
+    <!--fancybox 스크립트-->
+    <script>
+        $(function() {
+            Fancybox.bind('[data-fancybox="gallery"]', {
         });
-        $('.btn_gotop').click(function(){
-            $('html, body').animate({scrollTop:0},400);
-            return false;
-        });
-        </script>
+    })
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -84,15 +93,28 @@
                 <p>&nbsp;무기질은 소량이 필요하지만 생명과 건강을 유지하는 데 필수적인 영양소입니다. 뼈와 치아의 형성, 체액의 산과 염기 평형, 수분 평형에 관여합니다. 또한 신경 자극 전달 물질, 호르몬의 구성 성분 등으로도 쓰입니다. 무기질은 필요량에 따라 다량 무기질과 미량 무기질로 구분할 수 있습니다. <br><br>
                 &nbsp;주요 무기질인 다량 무기질에는 <b>칼슘(Ca), 마그네슘(Mg), 칼륨(K), 염소(Cl), 나트륨(Na), 황(S), 인(P)</b>가 있고, 미량 무기질은 <b>크로뮴(Cr), 철(Fe), 아연(Zn) 등</b>이 있습니다.</p>
             </div>
-            <div class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisl lectus, vulputate ut hendrerit id, rhoncus non mi. Pellentesque molestie nisi eu risus ultrices, eu consequat magna pulvinar. Proin a convallis diam. Etiam hendrerit pharetra aliquam. Vivamus a lobortis nisi, in eleifend felis. Suspendisse in dolor eleifend, scelerisque ligula in, sodales diam. Vivamus ut lectus nec elit dapibus facilisis ac nec magna. Mauris sed libero vel mi interdum egestas vitae vitae libero. Nunc nec mauris vel urna laoreet rutrum. Integer nisl sapien, suscipit ut pharetra sed, commodo quis quam. Nunc sed mattis metus, ut vehicula ligula. Nullam tempor suscipit tellus, quis feugiat mauris tempus quis. Aliquam nec leo diam. Ut sodales mi sit amet nibh cursus, ullamcorper rutrum sapien commodo.
-
-                Proin sollicitudin nisi vitae nulla vestibulum sodales. Integer in leo urna. Nam consequat pellentesque commodo. Integer sed felis et metus eleifend iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque felis tortor, aliquet sed nunc vitae, tincidunt pulvinar justo. Suspendisse potenti. Curabitur cursus velit at est facilisis aliquam. Integer pellentesque ligula a justo tempor pharetra. Duis euismod, magna in vestibulum tincidunt, ante quam tempus sapien, ac laoreet turpis purus vitae diam.
-                
-                Phasellus ligula urna, porttitor a ligula ut, vestibulum mollis dui. Ut suscipit luctus tempor. Nulla facilisi. Sed ut metus semper, fermentum dui non, volutpat dolor. Nulla rhoncus, odio id eleifend pulvinar, dolor nulla auctor eros, vel congue sem est sed purus. Cras pulvinar vel eros sit amet efficitur. Morbi non tellus purus. Donec in ex ac mi vestibulum aliquam ac ac nunc. Nullam laoreet, ipsum nec varius laoreet, purus sem eleifend metus, id pretium metus odio id libero. Donec consectetur lacus sed pharetra tincidunt. Pellentesque efficitur scelerisque blandit. Curabitur eget neque volutpat, malesuada mauris ac, porttitor eros.
-                
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit ante eu dui feugiat porttitor. Aliquam rhoncus nisi ante, eget faucibus felis rutrum nec. Donec a ante eleifend, tempus diam sit amet, varius nisi. Pellentesque id varius metus. Maecenas vestibulum odio justo. Praesent a efficitur nulla. In lectus neque, aliquet et semper at, placerat sed elit. Nullam eu orci porta, vehicula diam nec, placerat mauris. Donec eu mattis ex.
-                
-                In et metus sed risus hendrerit rutrum vel quis risus. Praesent egestas auctor lacus, a ullamcorper massa ultricies et. Sed ullamcorper ex quis tempor porttitor. Suspendisse id cursus augue, et sodales tortor. Pellentesque quis pellentesque diam. Sed sagittis consectetur sodales. Nullam fermentum, nulla imperdiet interdum faucibus, dui enim fringilla felis, pellentesque malesuada turpis mi a libero.
+            <div class="right">
+                <a href="../Assets/introduceImage/탄수화물.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/탄수화물.png" class="r-image" alt="탄수화물">
+                </a> 
+                <a href="../Assets/introduceImage/지방.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/지방.png" class="r-image" alt="지방">
+                </a> 
+                <a href="../Assets/introduceImage/단백질.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/단백질.png" class="r-image" alt="단백질">
+                </a> 
+                <a href="../Assets/introduceImage/비타민종류.jpg" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/비타민종류.jpg" class="r-image" alt="비타민종류">
+                </a> 
+                <a href="../Assets/introduceImage/비타민.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/비타민.png" class="r-image" alt="비타민">
+                </a> 
+                <a href="../Assets/introduceImage/대량무기질.avif" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/대량무기질.avif" class="r-image" alt="대량무기질">
+                </a> 
+                <a href="../Assets/introduceImage/미량무기질.avif" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/미량무기질.avif" class="r-image" alt="미량무기질">
+                </a> 
             </div>
             <div class="left movie-container">
                 <iframe width="800" height="450" src="https://www.youtube.com/embed/LspLi79-XzE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
