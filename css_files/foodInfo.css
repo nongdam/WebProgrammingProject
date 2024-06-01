@@ -1,0 +1,398 @@
+/*전체적인 스타일*/
+html {
+    background-color:  #fffdd0;
+    height: 100%;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 10px; /* 스크롤바의 폭 설정 */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 30px;
+    border: 2px solid gray;
+}
+
+body {
+    background-color: transparent;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+div.wrap {
+    background-color: transparent;
+    width: 100%;
+    min-width: 500px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li > a:hover {
+    text-decoration: underline;
+}
+
+/*태그 스타일*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: #fffdd0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+nav {
+    float: left;
+    height: auto;
+    width: 100%;
+    background-color: #556b2f;
+}
+
+section {
+    float: left;
+    width: 100%;
+    height: auto; 
+    background-color: #fffdd0;
+}
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid black;
+    font-size: 14px;
+}
+
+/*타이틀*/
+.title-container {
+    display: flex;
+    align-items: center;
+    position: absolute; /*절대 좌표 활용*/
+    left: 50%;
+    transform: translateX(-50%); 
+}
+h1.title {
+    display: inline;
+    color: #333333;
+    white-space: nowrap;
+    margin: 0;
+}
+
+
+.title_logo {
+    margin-right: 10px;
+    height: 40px;
+}
+
+/* 검색 */
+header > .container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+header .search {
+    display: flex;
+    align-items: center;
+    border: 5px solid #1f3f5f;
+    background-color: #fff;
+}
+.search > form {
+    width: 100%;
+}
+.search input {
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    box-sizing: border-box;
+    background: none;
+    min-width: auto;
+}
+
+/*화면 크기가 768px 이하일 때*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .title-container {
+        margin-bottom: 10px;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header > .container {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        margin-top: 50px;
+    }
+
+    .search {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .search input {
+        width: 100%;
+        min-width: 0;
+    }
+}
+/*navigation 메뉴바*/
+.nav_bar_box {
+    display: flex; 
+    justify-content: center;
+    width: 100%; 
+    margin: 0 auto;
+}
+ul.nav_bar {
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    list-style-type: none;
+    text-align:center; 
+    background-color: #556b2f;
+    padding: 0;
+    margin: 0;
+}
+
+ul.nav_bar > li {
+    display: inline-block; 
+    padding: 15px;
+    text-align:center; 
+}
+
+.nav_bar li a {
+    padding-top:10px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:10px;
+    text-decoration:none;
+}
+ul.nav_bar > li a:hover {
+    border-radius:5px;
+    background-color:#62a80d;
+    color:#FFFFFF;
+}
+@media(max-width:768px){
+    .menuBtn {
+        padding-top:6px;
+        padding-left:10px;
+        padding-right:10px;
+        padding-bottom:2px;
+        border:none;
+        border-radius:5px;
+        background-color:#ffffff00;
+        cursor:pointer;
+    }
+    .menuBtn:hover {
+        background-color:#62a80d;
+    }
+    .menuBtn span {
+        display:inline-block;
+        text-indent:-999px;
+    }
+    .nav_bar_box {
+        display: none;
+        flex-direction: column;
+        width: 40%;
+    }
+    .nav_bar {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .nav_bar > li {
+        display: block; 
+        padding: 10px 0; 
+        width: 100%;
+        text-align: center; 
+    }
+
+}
+@media(min-width:769px){
+    .menuBtn{
+        display: none;
+    }
+    .nav_bar_box {
+        display: flex !important;
+    }
+}
+
+
+/*섹션에 들어가는 내용*/
+
+
+/* 레시피 스타일 */
+.recipe {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.recipe-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.recipe-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-image img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.recipe-info {
+    text-align: center;
+}
+
+.recipe-ratingtime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.recipe-rating,
+.recipe-time,
+.recipe-category {
+    margin-top: 20px;
+    margin: 0 10px;
+}
+.recipe-rating > span, 
+.recipe-time > span ,
+.recipe-category > span,
+.recipe-calories > span,
+.recipe-nutrients > span {font-weight: bold;}
+
+.recipe-ingredients,
+.recipe-calories,
+.recipe-nutrients,
+.recipe-method {
+    margin-top: 20px;
+    flex: 1 1 100%;
+}
+
+.recipe-ingredients h3,
+.recipe-method h3 {
+    margin-top: 0;
+}
+
+.recipe-ingredients ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+.recipe-ingredients ul li {
+    display: block;
+    margin: 5px 0;
+}
+
+.recipe-method ol {
+    list-style-position: decimal;
+    margin-top: 20px;
+    padding-left: 30%;
+    text-align: left;
+}
+.recipe-method ol li {
+    display: list-item;
+    margin: 5px 0;
+}
+/*레시피 타이머*/
+.recipe-timer {
+    text-align: center;
+    margin-top: 20px;
+}
+.recipe-timer > div > span {
+    font-weight: bold;
+}
+#time-input {
+    width: 50px;
+}
+#start-timer {
+    margin-left: 10px;
+}
+
+/* 평점 */
+#star-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+    padding: 0;
+}
+
+.star:hover,
+.star.hovered,
+.star.selected {
+    color: gold;
+}
+#star-container > span {
+    font-weight: bold;
+}
+#average-rating {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/*footer에 들어가는 내용*/
+footer .foot-link a{
+    display: inline-block;
+    margin: 16px 0;
+    color: #3d3d3d;
+    font-size: 16px;
+    padding: 4px 30px;
+    border-right: 1px solid black;
+}
+footer p {
+    margin-top: 0; margin-bottom: 0;   
+  }
+footer p span {
+    display: inline-block;
+    margin-left: 30px;
+    color: #3d3d3d;
+  }
+/*상단으로 이동 버튼*/
+
+.btn_gotop {
+	display:none;
+	position:fixed;
+	bottom:30px;
+	right:30px;
+	z-index:999;
+    border:none;
+    border-radius:5px;
+	outline:none;
+	background-color:#ffffff00;
+	cursor:pointer;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
+    <link rel="stylesheet" href="../css_files/foodIntro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../scripts/randomRecipe.js"></script><!--반응형 카테고리 메뉴-->
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+    jQuery(".menuBtn").click(function() {
+        jQuery(".nav_bar_box").slideToggle();
+    });
+});
+    </script>
+    <!--상단 이동 버튼-->
+    <script>
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 300){
+            $('.btn_gotop').show();
+        } else{
+            $('.btn_gotop').hide();
+        }
+    });
+    $('.btn_gotop').click(function(){
+        $('html, body').animate({scrollTop:0},400);
+        return false;
+    });
+    </script>
+    <!--fancybox 스크립트-->
+    <script>
+        $(function() {
+            Fancybox.bind('[data-fancybox="gallery"]', {
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 상단으로 이동하기 버튼 -->
+        <a href="#" class="btn_gotop">
+            <img src="../Assets/Icons/top_arrow.png" style="width: 40px; height: 40px;"/>
+        </a>
+        <header>
+            <a href="main.html"  class="title-container">
+                <img src="../Assets/Icons/logo.png" alt="사이트 로고" class="title_logo">
+                <h1 class="title">혼밥도 건강하게!</h1>
+            </a>
+            <div class="container">
+                <div class="search">
+                    <form action="main.html" method="get">
+                        <input class="searchInput" type="text" name="search" value="" placeholder="검색어를 입력하세요.">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <button type="button" class="menuBtn">
+                    <i><img src="../Assets/Icons/menu.png" style="width: 20px; height: 20px;"/></i><span>MENU</span>
+                </button>
+                <div class="nav_bar_box">
+                    <ul class="nav_bar">
+                        <li><a href="">영양소 소개</a></li>
+                        <li><a href="#" id="randomRecipe">랜덤 요리 추천</a></li>
+                        <li><a href="main.html?search=한식">한식</a></li>
+                        <li><a href="main.html?search=일식">일식</a></li>
+                        <li><a href="main.html?search=양식">양식</a></li>
+                        <li><a href="main.html?search=중식">중식</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <div class="left"> 
+                <h3>우리 몸에 필요한 5대 영양소</h3>
+                <h4>1. 탄수화물</h4>
+                <p>&nbsp;탄수화물이란, '당류'의 동의어로 당, 녹말, 셀룰로스 등을 포함합니다. 탄수화물은 단당류, 이당류, 올리고당, 다당류로 분류되는데요, 여기서 당류는 우리가 흔히 아는 당(sugar)입니다. <br><br>
+                &nbsp;탄수화물은 우리 몸의 에너지를 생산하는 주원료입니다. 일반적으로 1g당 약 4kcal의 에너지를 생산하는 것으로 알려져있습니다. 성인의 하루 에너지 필요량이 2,000kcal인데, 일반적인 탄수화물 권장량은 에너지 필요량의 55~70%(1,100kcal ~ 1,400kcal) 정도로 <b>밥 3공기와 감자 1개 만큼의 탄수화물 섭취</b>를 권장하고 있습니다.</p>
+                <h4>2. 지방</h4>
+                <p>&nbsp;지방은 우리 몸의 구성물질입니다. 또한 다양한 생물에게 중요한 에너지원이며, 구조적인 기능과 대사적인 기능 모두 관여합니다. 에너지 밀도가 가장 높기 때문에 에너지 저장의 가장 효율적인 형태입니다. <br><br>
+                &nbsp;식약처에서는 <b>지방의 하루 권장 섭취량을 51g으로 지정</b>하고 있습니다.
+                </p>
+                <h4>3. 단백질</h4>
+                <p>&nbsp;단백질은 약 20가지의 아미노산으로 구성되어 있습니다. 동물을 위한 가장 기초적이고 중요한 영양소이며, 생물체 내에서 일어나는 복잡한 화학반응을 일으키는 효소들 대부분이 단백질입니다. 근육과 같이 몸을 구성하는 역할도 하며, 면역에 중요한 항체도 단백질로 이루어져 있습니다.
+                <br><br>&nbsp;<b>단백질의 하루 권장 섭취량</b>은 체중 1kg당 0.8 ~ 1.0g 정도로 각국에서 규정하고 있습니다. 식품 중에서 육류, 어류, 달걀, 콩, 유제품 등에 많이 함유되어 있습니다.
+                </p>
+                <h4>4. 비타민</h4>
+                <p>&nbsp;비타민은 생명체가 살아가는 데 중요한 역할을 하는 분자입니다. 많은 양이 필요하진 않지만 스스로 합성하는 것이 어렵기 때문에 음식을 통하여 섭취해야 합니다. 비타민은 위의 탄수화물, 지방, 단백질과 달리 에너지를 생성하지 못하지만 몸의 여러 기능을 조절합니다. 비타민은 A ~ E와 K가 있습니다.
+                </p>
+                <h4>5. 무기질</h4>
+                <p>&nbsp;무기질은 소량이 필요하지만 생명과 건강을 유지하는 데 필수적인 영양소입니다. 뼈와 치아의 형성, 체액의 산과 염기 평형, 수분 평형에 관여합니다. 또한 신경 자극 전달 물질, 호르몬의 구성 성분 등으로도 쓰입니다. 무기질은 필요량에 따라 다량 무기질과 미량 무기질로 구분할 수 있습니다. <br><br>
+                &nbsp;주요 무기질인 다량 무기질에는 <b>칼슘(Ca), 마그네슘(Mg), 칼륨(K), 염소(Cl), 나트륨(Na), 황(S), 인(P)</b>가 있고, 미량 무기질은 <b>크로뮴(Cr), 철(Fe), 아연(Zn) 등</b>이 있습니다.</p>
+            </div>
+            <div class="right">
+                <a href="../Assets/introduceImage/탄수화물.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/탄수화물.png" class="r-image" alt="탄수화물">
+                </a> 
+                <a href="../Assets/introduceImage/지방.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/지방.png" class="r-image" alt="지방">
+                </a> 
+                <a href="../Assets/introduceImage/단백질.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/단백질.png" class="r-image" alt="단백질">
+                </a> 
+                <a href="../Assets/introduceImage/비타민종류.jpg" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/비타민종류.jpg" class="r-image" alt="비타민종류">
+                </a> 
+                <a href="../Assets/introduceImage/비타민.png" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/비타민.png" class="r-image" alt="비타민">
+                </a> 
+                <a href="../Assets/introduceImage/대량무기질.avif" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/대량무기질.avif" class="r-image" alt="대량무기질">
+                </a> 
+                <a href="../Assets/introduceImage/미량무기질.avif" data-fancybox="gallery">
+                    <img src="../Assets/introduceImage/미량무기질.avif" class="r-image" alt="미량무기질">
+                </a> 
+            </div>
+            <div class="left movie-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/LspLi79-XzE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="left movie-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/-gsYDoiKIqc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            </section>
+        <footer>
+            <div class="foot-link">
+                <a href='https://github.com/nongdam/WebProgrammingProject.git' target='_blank'>Youtube</a>
+                <a href='https://github.com/nongdam/WebProgrammingProject.git' target='_blank'>Github</a>
+            </div>
+            <p>
+                <span>저자 : 정욱, 김찬, 신예찬</span><br>
+                <span>이메일 : asdfgh@gmail.com</span><br>
+                <span>Copyright 2024. All Rights Reserved.</span>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

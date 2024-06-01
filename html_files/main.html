@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼밥도 건강하게! 혼자사는 현대인을 위한 건강지킴이</title>
+    <link rel="stylesheet" href="../css_files/main.css">
+    <link rel="stylesheet" href="../css_files/foodCard.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../scripts/loadingInfo.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script src="../scripts/randomRecipe.js"></script>
+
+    <!--반응형 카테고리 메뉴-->
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".menuBtn").click(function() {
+            jQuery(".nav_bar_box").slideToggle();
+        });
+    });
+    </script>
+         <!--상단 이동 버튼-->
+    <script>
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100){
+                $('.btn_gotop').show();
+            } else{
+                $('.btn_gotop').hide();
+            }
+        });
+        $('.btn_gotop').click(function(){
+            $('html, body').animate({scrollTop:0},400);
+            return false;
+        });
+        </script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 상단으로 이동하기 버튼 -->
+        <a href="#" class="btn_gotop">
+            <img src="../Assets/Icons/top_arrow.png" style="width: 40px; height: 40px;"/>
+        </a>
+        <header>
+            <a href="main.html" class="title-container">
+                <img src="../Assets/Icons/logo.png" alt="사이트 로고" class="title_logo">
+                <h1 class="title">혼밥도 건강하게!</h1>
+            </a>
+            <div class="container">
+                <div class="search">
+                    <form action="" method="get">
+                        <input class="searchInput" type="text" name="search" value="" placeholder="검색어를 입력하세요.">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <button type="button" class="menuBtn">
+                    <i><img src="../Assets/Icons/menu.png" style="width: 20px; height: 20px;"/></i><span>MENU</span>
+                </button>
+                <div class="nav_bar_box">
+                    <ul class="nav_bar">
+                        <li><a href="./foodIntroduceNutrients.html">영양소 소개</a></li>
+                        <li><a href="#" id="randomRecipe">랜덤 요리 추천</a></li>
+                        <li><a href="main.html?search=한식">한식</a></li>
+                        <li><a href="main.html?search=일식">일식</a></li>
+                        <li><a href="main.html?search=양식">양식</a></li>
+                        <li><a href="main.html?search=중식">중식</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <div class="container">
+                <article>
+                    <h3 class="subtitle">추천 음식</h3>
+                    <ul class="foodList">
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <footer>
+            <div class="foot-link">
+                <a href='https://github.com/nongdam/WebProgrammingProject.git' target='_blank'>Youtube</a>
+                <a href='https://github.com/nongdam/WebProgrammingProject.git' target='_blank'>Github</a>
+            </div>
+            <p>
+                <span>저자 : 정욱, 김찬, 신예찬</span><br>
+                <span>이메일 : asdfgh@gmail.com</span><br>
+                <span>Copyright 2024. All Rights Reserved.</span>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
