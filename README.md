@@ -1,3 +1,5 @@
+혼밥도 건강하게! 웹사이트 이용방법
+
 1. 프로젝트 폴더에서 우클릭을 하여 터미널을 엽니다.
 2. python -m http.server 이 문장을 입력하여 로컬서버를 엽니다.
 3. http://localhost:8000/html_files/main.html 다음의 주소로 이동합니다.
