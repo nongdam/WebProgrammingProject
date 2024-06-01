@@ -28,7 +28,7 @@ body {
 div.wrap {
     background-color: transparent;
     width: 100%;
-    min-width: 500px;
+    min-width: 350px;
     height: 1080px;
     margin: 0;
     padding: 0;
@@ -243,27 +243,27 @@ ul.nav_bar > li a:hover {
         text-align: center; 
     }
     body{
-        width: 768px;
+        width: 100%;
     }
     section{
-        width: 768px;
+        width: 100%;
     }
     .left {
-        width: 480px;
-        padding: 5px;
-        margin: 5px auto;
+        width: 98%;
+        padding: 1%;
+        margin: 5px 0;
     }
     .right {
-        width: 250px;
-        padding: 5px;
-        margin: 5px auto;
+        width: 98%;
+        padding: 1%;
+        margin: 5px 0;
     }
     .movie-container > iframe {
-        width: 480px;
+        width: 98%;
         height: 270px;
     }
     .r-image {
-        width: 250px!important;
+        width: 98%!important;
     }
 }
 @media(min-width:769px){

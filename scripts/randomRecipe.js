@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("randomRecipe").addEventListener("click", function(event) {
         event.preventDefault();
-        fetch('/data/foodsList.json')
+        fetch('../data/foodsList.json')
             .then(response => response.json())
             .then(data => {
                 const recipes = data.recipes;

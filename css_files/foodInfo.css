@@ -30,7 +30,7 @@ body {
 div.wrap {
     background-color: transparent;
     width: 100%;
-    min-width: 500px;
+    min-width: 350px;
     height: 1080px;
     margin: 0;
     padding: 0;
@@ -225,7 +225,12 @@ ul.nav_bar > li a:hover {
         width: 100%;
         text-align: center; 
     }
-
+    .recipe-method ol {
+        padding-left: 10%!important;
+    }
+    .recipe-image img {
+        max-width: 350px!important;
+    }    
 }
 @media(min-width:769px){
     .menuBtn{
