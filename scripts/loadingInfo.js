@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Fetching data from:", '/data/foodsList.json');
-    fetch('/data/foodsList.json')
+    console.log("Fetching data from:", '../data/foodsList.json');
+    fetch('../data/foodsList.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
