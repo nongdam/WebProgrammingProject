@@ -260,6 +260,7 @@ ul.nav_bar > li a:hover {
     }
     .movie-container > iframe {
         width: 480px;
+        height: 270px;
     }
 }
 @media(min-width:769px){
