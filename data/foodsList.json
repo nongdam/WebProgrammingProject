@@ -170,7 +170,7 @@
         },
 	{
             "name": "김치 볶음밥",
-            "image": "../Assets/foods/kimchi-fried-rice.jpg",
+            "image": "../Assets/foods/김치볶음밥.jpg",
             "average-rating": 4.1,
             "rating-count": 25,
             "time": "약 15분",
