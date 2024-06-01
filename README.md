@@ -39,3 +39,10 @@
 ## 서버 종료
 
 - 서버를 끌 때는 터미널에서 `CTRL + C`를 누릅니다.
+
+### 로컬 서버를 열 수 없는 상황일 경우
+
+- 다음 주소에서 확인하실 수 있습니다:
+  ```
+  http://myweb.kyonggi.ac.kr/users/202111480/webproject/html_files/main.html
+  ```
