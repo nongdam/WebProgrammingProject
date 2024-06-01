@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // URL에서 'search' 파라미터를 가져옴
     const searchQuery = getQueryParam('search');
-
     // 페이지 로드 시 검색어가 URL에 있을 경우 필터링 실행
     document.addEventListener('recipesLoaded', function() {
         if (searchQuery) {
