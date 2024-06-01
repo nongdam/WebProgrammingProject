@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         <input type="hidden" name="time" value="${recipe['time']}">
                         <h1>${recipe.name}</h1>
                         <h3>${recipe.category}</h3>
+                        <div class="rating">
+                            ${'★'.repeat(Math.round(recipe['average-rating']))}${'☆'.repeat(5 - Math.round(recipe['average-rating']))}
+                            <span>(${recipe['average-rating'].toFixed(1)})</span>
+                        </div>
                     </button>
                 </form>
             `;

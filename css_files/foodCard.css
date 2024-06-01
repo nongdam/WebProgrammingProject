@@ -8,7 +8,7 @@
     color: black;
     border: 5px solid #FFDA00;
     width: 300px;
-    height: 300px;
+    height: 320px;
     margin: 20px;
     padding: 10px;
     cursor: pointer; /* 클릭 가능함을 나타내는 커서 스타일 */
@@ -24,4 +24,13 @@
 
 .foodCard:hover {
     transform: scale(1.05);
+}
+
+.rating {
+    margin-top: 10px;
+    font-size: 20px;
+    color: orange;
+}
+.rating > span {
+    color: black;
 }
